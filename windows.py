@@ -20,6 +20,7 @@ window.update()
 window.title("Assisted Secure Information Storage")
 window.grid_rowconfigure(13, weight=1)
 window.grid_columnconfigure(1, weight=1)
+window.configure(bg='#242424')
 
 # Initialize the data tables if they are not already initialized (Existence check is in each method)
 db.createMasterTable()
@@ -58,7 +59,6 @@ def registerWindow():
         widget.destroy()
 
     window.geometry("420x220")
-    window.configure(bg='#242424')
     window.unbind('<Return>')
 
     # Labels and entries to create the register components
@@ -478,7 +478,7 @@ def textWindowContent():
     def nextPage():
         global begin
         global end
-        if (begin + 7) < len(db.getAccountStorageTable()):
+        if (begin + 7) < len(db.getTextStorageTable()):
             begin = begin + 7
             end = end + 7
             textMainWindow()
